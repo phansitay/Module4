@@ -16,14 +16,6 @@ public class SanWich {
     public String home(){
         return "maytinh";
     }
-    @PostMapping("/chuyen")
-    public String chuyenTien(Model model,float soTien)
-    {
-        float kq = soTien*24000;
-        model.addAttribute("usd",soTien);
-        model.addAttribute("kq",kq);
-        return "maytinh";
-    }
     @PostMapping("/save")
     public String mayTinh(Model model,@RequestParam("toan") String toan,@RequestParam("a") float a,@RequestParam("b") float b)
     {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Product</title>
+</head>
+<body>
+    <h1 style="text-align: center;background-color:chartreuse;color: black">List Product</h1>
+    <button>
+        <a th:href="@{/create}" style="text-decoration: none">Add Product</a>
+    </button>
+    <form th:action="@{/search}" method="post" >
+        <input type="text" name="search">
+        <button type="submit">Search</button>
+    </form>
+    <table border="1" style="margin-top: 50px">
+        <tr>
+            <th>No</th>
+            <th>ID</th>
+            <th>Name Product</th>
+            <th>Number of Product</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Action</th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="product, iter: ${products}" th:object="${product}">
+            <td th:text="${iter.index}"></td>
+            <td th:text="${product.getId()}"></td>
+            <td th:text="${product.getName()}"></td>
+            <td th:text="${product.getNumber()}"></td>
+            <td th:text="${product.getPrice()}"></td>
+            <td th:text="${product.getDescription()}"></td>
+<!--            <td th:text="*{address}" th:if="${stu.address}"></td>-->
+
+            <td><button style="background-color: coral">
+                <a th:href="@{/update(id=*{id})}" style="text-decoration: none">Update</a></td>
+            </button>
+            <td><button style="background-color: coral">
+                <a th:href="@{/{id}/delete(id=*{id})}" style="text-decoration: none">Delete</a></td>
+            </button>
+            </td>
+            <td>
+                <button style="background-color: coral">
+                    <a th:href="@{/{id}/detail(id=*{id})}">Detail</a></td>
+                </button>
+            </td>
+
+        </tr>
+    </table>
+</body>
+</html>
