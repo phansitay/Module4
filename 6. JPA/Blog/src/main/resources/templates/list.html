@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<button>
+    <a th:href="@{/create}" style="text-decoration: none">Create Blog</a>
+</button>
+<table width="700px" border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name Blog</th>
+        <th>Author Blog</th>
+        <th>Read</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tr th:each="blog,loop : ${blogs}" th:object="${blog}">
+        <td th:text="${blog.id}"></td>
+        <td th:text="${blog.nameBlog}"></td>
+        <td th:text="${blog.authorBlog}"></td>
+        <td>
+            <button>
+                <a th:href="@{/{id}/detail(id=${blog.id})}" style="text-decoration: none">Read</a>
+            </button>
+        </td>
+        <td>
+            <button>
+                <a th:href="@{/{id}/delete(id=${blog.id})}" style="text-decoration: none">Delete</a>
+            </button>
+        </td>
+        <td>
+            <button>
+                <a th:href="@{/update(id=*{id})}" style="text-decoration: none">Update</a>
+            </button>
+        </td>
+
+    </tr>
+</table>
+</body>
+</html>

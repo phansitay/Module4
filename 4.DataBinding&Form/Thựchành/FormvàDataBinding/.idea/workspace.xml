@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c41e1817-8adb-4b83-9e67-0c9e2fc19079" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/src/main/java/bai2/controller/SanWich.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Máy tính cá nhân/src/main/java/bai2/controller/SanWich.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/java/codegym/config/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/java/codegym/config/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/java/codegym/controller/EmailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/java/codegym/model/Email.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/java/codegym/repository/IEmailRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/java/codegym/repository/impl/EmailRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/java/codegym/service/IEmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/java/codegym/service/impl/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/webapp/WEB-INF/views/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/webapp/WEB-INF/views/detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Bài Tập/[Bài tập] Chương trình lưu giữ cấu hình hòm thư điện tử/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Ứng dụng hiển thị gia vị với Sandwich/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. Spring Controller/Bài tập/[Bài tập] Ứng dụng hiển thị gia vị với Sandwich/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +84,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Module4/ss2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -175,6 +190,7 @@
       <updated>1669632950848</updated>
       <workItem from="1669632952515" duration="4209000" />
       <workItem from="1669637219603" duration="1785000" />
+      <workItem from="1670227755940" duration="914000" />
     </task>
     <servers />
   </component>
