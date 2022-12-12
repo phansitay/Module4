@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<form action="/update" method="post" th:object="${blog}">
+    <table>
+        <tr>
+            <td><input type="text" th:field="*{id}" hidden></td>
+        </tr>
+        <tr>
+            <td>Name Blog</td>
+            <td><input type="text" th:field="*{nameBlog}"></td>
+        </tr>
+        <tr>
+            <td>Author Blog</td>
+            <td><input type="text" th:field="*{authorBlog}"></td>
+        </tr>
+        <tr>
+            <td>Content Blog</td>
+            <td><input type="text" th:field="*{contentBlog}"></td>
+        </tr>
+    </table>
+    <button type="submit">Update</button>
+    <button><a th:href="@{/list}" style="text-decoration: none">Quay lại trang list</a></button>
+</form>
+</body>
+</html>

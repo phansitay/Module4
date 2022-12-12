@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<button>
+    <a th:href="@{/list}" style="text-decoration: none">Quay lại trang List</a>
+</button>
+<br>
+<form action="/create" method="post" th:object="${email}">
+    <table>
+        <tr>
+            <td>Language</td>
+            <td>
+                <select th:field="${email.language}" >
+                    <option th:value="Englist">Englist</option>
+                    <option th:value="VietNames">VietNames</option>
+                    <option th:value="Japanes">Japanes</option>
+                    <option th:value="Chines">Chines</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Page Size</td>
+            <td>
+                <select th:field="${email.size}">
+                    <option th:value="5">5</option>
+                    <option th:value="10">10</option>
+                    <option th:value="25">25</option>
+                    <option th:value="50">50</option>
+                    <option th:value="100">100</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Spams Filter</td>
+            <td>
+                <input type="checkbox"th:field="${email.spam}">Enable Spams
+            </td>
+        </tr>
+        <tr>
+            <td>Signature</td>
+            <td>
+                <input type="text" th:field="${email.signature}">
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Update</button>
+</form>
+
+</body>
+</html>

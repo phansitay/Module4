@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<form action="/create">
+    <button>
+        <a th:href="@{/create}" style="text-decoration: none">Create Email</a>
+    </button>
+</form>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Language</th>
+        <th>Size Page</th>
+        <th>Spam</th>
+        <th>Signature</th>
+    </tr>
+    <tr th:each="emails: ${emails}" th:object="${emails}">
+        <td th:text="${emails.id}"></td>
+        <td th:text="${emails.language}"></td>
+        <td th:text="${emails.size}"></td>
+        <td th:text="${emails.spam}?'Enable':'DisEnable'"></td>
+        <td th:text="${emails.signature}"></td>
+    </tr>
+
+</table>
+</body>
+</html>
