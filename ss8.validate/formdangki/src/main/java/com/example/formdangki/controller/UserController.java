@@ -42,7 +42,7 @@ public class UserController {
             return "/create";
         }
         userService.insert(user);
-        return "redirect:/list";
+        return "result";
     }
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable int id, Model model){

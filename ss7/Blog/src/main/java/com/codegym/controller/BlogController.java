@@ -1,7 +1,9 @@
 package com.codegym.controller;
 
 import com.codegym.model.Blog;
+import com.codegym.model.Category;
 import com.codegym.service.IBlogService;
+import com.codegym.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -16,11 +18,20 @@ public class BlogController {
     @Qualifier("blogService")
     private IBlogService blogService;
 
+    @Autowired
+    @Qualifier("categoryService")
+    private ICategoryService categoryService;
     @GetMapping("/list")
     public String showList(Model model)
     {
         model.addAttribute("blogs",blogService.getAll());
         return "list";
+    }
+    @GetMapping("/listCategory")
+    public String showListCategory(Model model)
+    {
+        model.addAttribute("category",categoryService.finAll());
+        return "listCategory";
     }
     @GetMapping("/{id}/detail")
     public String detail(@PathVariable int id, Model model){
@@ -38,6 +49,7 @@ public class BlogController {
     @GetMapping("/create")
     public String create(Model model){
         model.addAttribute("blog",new Blog());
+        model.addAttribute("category", categoryService.finAll());
         return "create";
     }
     @PostMapping("/create")
@@ -48,12 +60,18 @@ public class BlogController {
     @GetMapping("/update")
     public String update(@RequestParam("id") int id , Model model){
         model.addAttribute("blog",blogService.getBlogById(id));
+        model.addAttribute("category",categoryService.finAll());
         return "update";
     }
     @PostMapping("/update")
     public String update(@ModelAttribute("blog") Blog blog){
         blogService.save(blog);
         return "redirect:/list";
+    }
+    @PostMapping("/search")
+    public String search(@RequestParam("search") String search, Model model){
+        model.addAttribute("blogs",blogService.search(search));
+        return "list";
     }
 
 }

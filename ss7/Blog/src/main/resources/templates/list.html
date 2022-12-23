@@ -26,11 +26,22 @@
 <button>
     <a th:href="@{/create}" style="text-decoration: none">Create Blog</a>
 </button>
+<button>
+    <a th:href="@{/listCategory}" style="text-decoration: none">Category</a>
+</button>
+<br>
+Nhập tên bài viết
+<form action="/search" method="post" name="search">
+    <input type="text" name="search">
+    <button>Search</button>
+</form>
 <table width="700px" border="1">
     <tr>
         <th>Id</th>
         <th>Name Blog</th>
         <th>Author Blog</th>
+        <th>Category</th>
+        <th>Date Create</th>
         <th>Read</th>
         <th>Delete</th>
         <th>Update</th>
@@ -39,6 +50,8 @@
         <td th:text="${blog.id}"></td>
         <td th:text="${blog.nameBlog}"></td>
         <td th:text="${blog.authorBlog}"></td>
+        <td th:text="*{category.name}"></td>
+        <td th:text="${blog.datePublish}"></td>
         <td>
             <button>
                 <a th:href="@{/{id}/detail(id=${blog.id})}" style="text-decoration: none">Read</a>
@@ -54,6 +67,7 @@
                 <a th:href="@{/update(id=*{id})}" style="text-decoration: none">Update</a>
             </button>
         </td>
+
 
     </tr>
 </table>

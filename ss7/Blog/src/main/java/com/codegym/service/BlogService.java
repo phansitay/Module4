@@ -30,4 +30,9 @@ public class BlogService implements IBlogService {
     public void delete(int id) {
         blogRepository.deleteById(id);
     }
+
+    @Override
+    public List<Blog> search(String nameBlog) {
+        return blogRepository.findAllByNameBlog(nameBlog);
+    }
 }

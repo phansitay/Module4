@@ -9,4 +9,5 @@ public interface IBlogService {
     void save(Blog blog);
     Blog getBlogById(int id);
     void delete(int id);
+    List<Blog> search(String nameBlog);
 }
