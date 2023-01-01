@@ -23,24 +23,28 @@
     </style>
 </head>
 <body>
+<button>
+    <a th:href="@{/list}" style="text-decoration: none">Quay lại trang list blog</a>
+</button>
 <table>
     <tr>
-        <th>Mã mượn</th>
-        <th>Tên sách</th>
-        <th>Người mượn</th>
-        <th>Ngày mượn</th>
+        <th>Id</th>
+        <th>Name Category</th>
+        <th>Id book</th>
     </tr>
-    <tr th:each="manage :${manage}" th:object="${manage}">
+    <tr th:each="manage:${manage}" th:object="${manage}">
         <td th:text="${manage.id}"></td>
-        <td th:text="*{book.name}"></td>
-        <td th:text="${manage.nameUser}"></td>
-        <td th:text="${manage.date}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{book.id}"></td>
     </tr>
     <tr>
-        <button>
-            <a th:href="@{/list}">Quay lại list Sách</a>
-        </button>
+        <td>
+            <button>
+                <a th:href="@{/{id}/delete(id=${manage.id})}" style="text-decoration: none">Trả sách</a>
+            </button>
+        </td>
     </tr>
 </table>
+
 </body>
 </html>

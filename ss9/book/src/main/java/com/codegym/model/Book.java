@@ -1,4 +1,4 @@
-package com.example.book.model;
+package com.codegym.model;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -9,21 +9,20 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+    @Column(name = "name")
     private String name;
-    private String author;
     private int quantity;
     @OneToMany(mappedBy = "book")
-    Set<ManageBook> manageBooks;
+    private Set<Manage> manages;
 
     public Book() {
     }
 
-    public Book(Integer id, String name, String author, int quantity, Set<ManageBook> manageBooks) {
+    public Book(Integer id, String name, int quantity, Set<Manage> manages) {
         this.id = id;
         this.name = name;
-        this.author = author;
         this.quantity = quantity;
-        this.manageBooks = manageBooks;
+        this.manages = manages;
     }
 
     public Integer getId() {
@@ -42,14 +41,6 @@ public class Book {
         this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public int getQuantity() {
         return quantity;
     }
@@ -58,11 +49,11 @@ public class Book {
         this.quantity = quantity;
     }
 
-    public Set<ManageBook> getManageBooks() {
-        return manageBooks;
+    public Set<Manage> getManages() {
+        return manages;
     }
 
-    public void setManageBooks(Set<ManageBook> manageBooks) {
-        this.manageBooks = manageBooks;
+    public void setManages(Set<Manage> manages) {
+        this.manages = manages;
     }
 }

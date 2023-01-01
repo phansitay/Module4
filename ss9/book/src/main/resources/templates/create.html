@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<form action="/create" method="post" th:object="${manage}" >
+    <table>
+        <tr>
+            <td>Tên người mượn</td>
+            <td>
+                <input type="text" th:field="*{name}">
+            </td>
+        </tr>
+        <tr>
+            <td>Tên sách</td>
+            <td>
+                <select th:field="*{book}">
+                    <option th:each="book :${book}" th:value="${book.id}" th:text="${book.name}"></option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Add Manage</button>
+    <button>
+        <a th:href="@{/list}" style="text-decoration: none">Quay lại trang List</a>
+    </button>
+</form>
+</body>
+</html>

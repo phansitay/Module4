@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<!--<button>-->
+<!--    <a th:href="@{/{id}/create(id=${book.id})}" style="text-decoration: none">Create Blog</a>-->
+<!--</button>-->
+<button>
+    <a th:href="@{/listManage}" style="text-decoration: none">Category</a>
+</button>
+<br>
+Nhập tên bài viết
+<form action="/search" method="post" name="search">
+    <input type="text" name="search">
+    <button>Search</button>
+</form>
+<table width="700px" border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name Book</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="book,loop : ${books}" th:object="${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.quantity}"></td>
+        <td>
+            <button>
+                <a th:href="@{/{id}/create(id=${book.id})}" style="text-decoration: none">Mượn</a>
+            </button>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
