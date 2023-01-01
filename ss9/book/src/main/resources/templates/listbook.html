@@ -26,6 +26,9 @@
 <button>
     <a th:href="@{/createbook}" style="text-decoration: none">Create a new Book</a>
 </button>
+<button>
+    <a th:href="@{/listmanage}">List mượn sách</a>
+</button>
 <body>
     <table>
         <tr>
@@ -34,7 +37,7 @@
             <th>Author</th>
             <th>Quantity</th>
             <th>Action</th>
-<!--            <th>Action</th>-->
+            <th>Action</th>
         </tr>
         <tr th:each="book: ${books}" th:object="${books}">
             <td th:text="${book.id}"></td>
@@ -42,13 +45,18 @@
             <td th:text="${book.author}"></td>
             <td th:text="${book.quantity}"></td>
             <td>
-                <button>Mượn</button>
+                <button>
+                    <a th:href="@{/{id}/delete(id=${book.id})}" style="text-decoration: none">Delete</a>
+                </button>
+                <button>
+                    <a th:href="@{/list}"></a>
+                </button>
             </td>
-<!--            <td>-->
-<!--                <button>-->
-<!--                    <a th:href="@{/{id}/delete(id=${book.id})" style="text-decoration: none">Delete</a>-->
-<!--                </button>-->
-<!--            </td>-->
+            <td>
+                <button>
+                    <a th:href="@{/{id}/detail(id=${book.id})}" style="text-decoration: none">Detail</a>
+                </button>
+            </td>
         </tr>
     </table>
 </body>

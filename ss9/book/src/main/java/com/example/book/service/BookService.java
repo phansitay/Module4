@@ -30,4 +30,9 @@ public class BookService implements IBookService{
     public void delete(int id) {
         bookRepository.deleteById(id);
     }
+
+    @Override
+    public List<Book> creManage(int id) {
+        return bookRepository.creManage(id);
+    }
 }

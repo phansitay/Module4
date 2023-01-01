@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Mã mượn</th>
+        <th>Tên sách</th>
+        <th>Người mượn</th>
+        <th>Ngày mượn</th>
+    </tr>
+    <tr th:each="manage :${manage}" th:object="${manage}">
+        <td th:text="${manage.id}"></td>
+        <td th:text="*{book.name}"></td>
+        <td th:text="${manage.nameUser}"></td>
+        <td th:text="${manage.date}"></td>
+    </tr>
+    <tr>
+        <button>
+            <a th:href="@{/list}">Quay lại list Sách</a>
+        </button>
+    </tr>
+</table>
+</body>
+</html>

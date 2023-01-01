@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button>
+        <a th:href="@{/create}" style="text-decoration: none">Add new Music</a>
+    </button>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Tên bài hát</th>
+            <th>Nghệ sĩ thể hiện</th>
+            <th>Thể loại</th>
+            <th>Link</th>
+        </tr>
+        <tr th:each="music :${music}" th:object="${music}">
+            <td th:text="${music.id}"></td>
+            <td th:text="${music.name}"></td>
+            <td th:text="${music.author}"></td>
+            <td th:text="${music.category}"></td>
+            <td >
+                <a href= th:text="${music.link}", th:text="${music.link}"></a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

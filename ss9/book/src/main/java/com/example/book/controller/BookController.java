@@ -36,4 +36,10 @@ public class BookController {
         bookService.delete(id);
         return "redirect:/list";
     }
+
+    @GetMapping("/{id}/detail")
+    public String showDetail(@PathVariable int id,Model model){
+        model.addAttribute("book",bookService.finById(id));
+        return "detail";
+    }
 }

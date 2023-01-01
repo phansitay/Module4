@@ -9,4 +9,5 @@ public interface IBookService {
     Book finById(int id);
     void save(Book book);
     void delete(int id);
+    List<Book>creManage(int id);
 }
