@@ -1,0 +1,12 @@
+.product{
+    width: 25%;
+    background-color: red;
+    float: left;
+    position: relative;
+}
+.product-m{
+    position: absolute;
+}
+h4{
+    color: red;
+}

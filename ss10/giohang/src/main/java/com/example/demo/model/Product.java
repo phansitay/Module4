@@ -2,7 +2,7 @@ package com.example.demo.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "ss10product")
 @Table(name = "product")
 public class Product {
     @Id
@@ -11,14 +11,16 @@ public class Product {
     private String name;
     private double price;
     private String description;
+    private String img;
 
     public Product() {
     }
 
-    public Product(String name, double price, String description) {
+    public Product(String name, double price, String description,String img) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.img=img;
     }
 
     public Long getId() {
@@ -51,5 +53,13 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }
