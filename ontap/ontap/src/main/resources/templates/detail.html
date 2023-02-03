@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div th:object="${book}">
+    <h1 th:text="${book.name}" style="text-transform: uppercase; text-align: center;background-color: red" ></h1>
+    Author: <span th:text="${book.author}"></span>
+    <br>
+    Category: <span th:text="*{category.name}"></span>
+    <br>
+    <br>
+    Nội dung:
+    <p th:text="${book.content}"></p>
+</div>
+
+<button class="btn btn-primary">
+    <a th:href="@{/list}" style="text-decoration: none;color: #f2f2f2">Quay lại trang List</a>
+</button>
+</body>
+</html>
