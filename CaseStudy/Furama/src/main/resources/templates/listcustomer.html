@@ -29,7 +29,6 @@
             background-color: #CCCCFF;
         }
         .function{
-            height: 80px;
             margin-bottom: 5px;
             background-color: #FFCC99	;
         }
@@ -41,56 +40,72 @@
 <body class="bd">
 
 <div class="function">
-    <button class="btn btn-primary" style="margin-top: 20px;margin-left: 10%;float: left" >
-        <a th:href="@{/create}" style="text-decoration: none;color: #f2f2f2"> Create Book</a>
-    </button>
-
-    <button class="btn btn-primary" style="margin-top: 20px;margin-left: 10%;float: left">
-        <a th:href="@{/category}" style="text-decoration: none;color: #f2f2f2"> Category</a>
-    </button>
-
-    <form action="/search" method="post" name="search" style="float: left;margin-left: 10%">
-        <input type="text" name="search" style="height: 37px;border-radius: 5px;margin-top: 20px">
-        <button class="btn btn-primary" style="margin-top: -7px">Search</button>
-    </form>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/home}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Employee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contract</a>
+                    </li>
+                </ul>
+                <form class="d-flex" action="/search" method="post" name="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 </div>
-
+<div class="function-1" style="margin-left: 10%">
+    <button class="btn btn-primary">
+        <a th:href="@{/create}" style="text-decoration: none;color: #f2f2f2">Add new Customer</a>
+    </button>
+</div>
 <table class="tb">
     <tr>
         <th>Id</th>
+        <th>Id Type</th>
         <th>Name</th>
-        <th>Author</th>
-        <th>Category</th>
-        <th>Quantity</th>
-        <th>Action</th>
-        <th>Action</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+        <th>Id cart</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
         <th>Action</th>
     </tr>
-    <tr th:each="book :${books}" th:object="${book}">
-        <td th:text="${book.id}"></td>
-        <td th:text="${book.name}"></td>
-        <td th:text="${book.author}"></td>
-        <td th:text="*{category.name}"></td>
-        <td th:text="${book.quantity}"></td>
+    <tr th:each="customer :${customers}" th:object="${customer}">
+        <td th:text="${customer.customerId}"></td>
+        <td th:text="*{customerType.customerTypeName}"></td>
+        <td th:text="${customer.customerName}"></td>
+        <td th:text="${customer.customerBirthday}"></td>
+        <td th:text="${customer.customerGender}"></td>
+        <td th:text="${customer.customerIdCart}"></td>
+        <td th:text="${customer.customerPhone}"></td>
+        <td th:text="${customer.customerEmail}"></td>
+        <td th:text="${customer.customerAddress}"></td>
         <td>
-            <button class="btn btn-primary">
-                <a th:href="@{/{id}/detail(id=${book.id})}" style="text-decoration: none;color: #f2f2f2">Read</a>
-            </button>
-        </td>
-        <td>
-            <button type="button" th:onclick="deleteInfo([[${book.id}]],[[${book.name}]])"
+            <button type="button" th:onclick="deleteInfo([[${customer.customerId}]],[[${customer.customerName}]])"
                     class="btn btn-outline-danger"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
                 delete
-                    </svg>
-            </button>
-        </td>
-        <td>
-            <button class="btn btn-primary">
-                <a th:href="@{/update(id=*{id})}" style="text-decoration: none;color: #f2f2f2">Update</a>
+                </svg>
             </button>
         </td>
     </tr>
+
 </table>
 </body>
 <!-- Modal delete -->

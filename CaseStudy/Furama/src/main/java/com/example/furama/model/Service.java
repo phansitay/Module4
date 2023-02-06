@@ -19,9 +19,9 @@ public class Service {
     @ManyToOne
     @JoinColumn(name = "rentTypeId")
     RentType  rentType;
-    @ManyToOne
-    @JoinColumn(name = "serviceTypeId")
-    ServiceType serviceType;
+//    @ManyToOne
+//    @JoinColumn(name = "serviceTypeId")
+//    ServiceType serviceType;
     @Column(name = "standard_room")
     private int  standardRoom;
     @Column(name = "description_other_convenience")

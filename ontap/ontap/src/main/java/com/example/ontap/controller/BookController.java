@@ -67,4 +67,18 @@ public class BookController {
         model.addAttribute("books",bookService.search(search));
         return "list";
     }
+
+    @GetMapping("/update")
+    public String showUpdate(@RequestParam("id") int id ,Model model){
+        model.addAttribute("book",bookService.finById(id));
+        model.addAttribute("category",categoryService.finAll());
+        return "update";
+    }
+
+    @PostMapping("/update")
+    public String doUpdate(@ModelAttribute("book") Book book){
+        bookService.save(book);
+        return "redirect:/list";
+    }
+
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <style>
+        span{
+            color: #ff0000;
+        }
+
+        .bd{
+            background-color: #CCFFCC;
+        }
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body class="bd">
+<form action="/create" method="post" th:object="${customer}" style="margin-left: 24%; margin-right: 24%;padding: 3%;background-color: #FFCCCC;border-radius: 3% ;margin-top: 2%">
+    <div class="mb-3" style="width: 100%" >
+        <label for="exampleInputEmail1" class="form-label">Customer Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" th:field="*{customerName}">
+        <div id="emailHelp" class="form-text"><span th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></span></div>
+    </div>
+
+
+    <div>
+        <td>Customer Type Id</td>
+        <td>
+            <select th:field="*{customerType}">
+                <option th:each="customerType :${customerType}" th:value="${customerType.customerTypeId}" th:text="${customerType.customerTypeName}"></option>
+            </select>
+        </td>
+    </div>
+
+    <div class="mb-3" style="width: 100%">
+        <label for="exampleInputEmail1" class="form-label">Birthday</label>
+        <input type="date" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" th:field="*{customerBirthday}">
+        <span th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{customerBirthday}"></span>
+    </div>
+
+
+    <div class="mb-3" style="width: 100%">
+        <label for="exampleInputEmail1" class="form-label">customerGender</label>
+        <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" th:field="*{customerGender}">
+        <span th:if="${#fields.hasErrors('customerGender')}" th:errors="*{customerGender}"></span>
+    </div>
+    <div class="mb-3" style="width: 100%"v>
+        <label for="exampleInputEmail1" class="form-label">customerIdCart</label>
+        <input type="text" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp" th:field="*{customerIdCart}">
+        <span th:if="${#fields.hasErrors('customerIdCart')}" th:errors="*{customerIdCart}"></span>
+    </div>
+    <div class="mb-3" style="width: 100%"v>
+        <label for="exampleInputEmail1" class="form-label">customerPhone</label>
+        <input type="text" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp" th:field="*{customerPhone}">
+        <span th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}"></span>
+    </div>
+    <div class="mb-3" style="width: 100%"v>
+        <label for="exampleInputEmail1" class="form-label">customerEmail</label>
+        <input type="text" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp" th:field="*{customerEmail}">
+        <span th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}"></span>
+    </div>
+    <div class="mb-3" style="width: 100%"v>
+        <label for="exampleInputEmail1" class="form-label">customerAddress</label>
+        <input type="text" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp" th:field="*{customerAddress}">
+        <span th:if="${#fields.hasErrors('customerAddress')}" th:errors="*{customerAddress}"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Book</button>
+    <button class="btn btn-primary">
+        <a th:href="@{/list}" style="text-decoration: none;color: #f2f2f2">Quay lại trang List</a>
+    </button>
+</form>
+
+
+</form>
+
+</body>
+</html>
